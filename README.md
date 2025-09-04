@@ -97,3 +97,69 @@ from models import Users, Events, Bookings, Payments
 
 Base.metadata.create_all(bind=engine)
 print("Database initialized successfully!")
+```
+---
+## Usage
+
+Follow these steps to use the Ticket Booking System API:
+
+1. **Sign Up**
+   - Create a new user account via the signup endpoint or registration page.
+   
+2. **Login**
+   - Login with your credentials to receive a **JWT token**.
+   - Include this token in the Authorization header for any protected requests:
+     ```
+     Authorization: Bearer <your_token>
+     ```
+
+3. **Browse Events**
+   - View the list of available events.
+   - Check event details such as date, time, location, price, and available tickets.
+
+4. **Book Tickets**
+   - Select an event and specify the number of tickets to book.
+   - Booking will automatically update the available tickets.
+
+5. **Make Payments**
+   - Complete the payment for your booked tickets (simulated payment integration).
+   - Check the status of your payments (success/pending).
+
+6. **Admin Actions (Optional)**
+   - If logged in as an admin, you can manage events:
+     - Create new events
+     - Update existing events
+     - Delete events
+   - Admins can also view user and booking reports.
+
+**Tip:**  
+- Always keep your JWT token safe and include it in requests that require authentication.
+- Users can view their own bookings and payment history at any time.
+
+---
+
+## Future Enhancements
+
+Planned improvements to make the Ticket Booking System even more powerful:
+
+1. **Real Payment Gateway Integration**  
+   - Integrate with Stripe, Razorpay, or PayPal for live payments.
+
+2. **Email & SMS Notifications**  
+   - Send confirmation emails or SMS for bookings, cancellations, and reminders.
+
+3. **Event Search and Filtering**  
+   - Allow users to search events by name, date, location, or category.
+
+4. **User Roles & Permissions**  
+   - Implement more granular roles (e.g., event organizers, moderators) with restricted access.
+
+5. **Frontend Interface**  
+   - Build a user-friendly web or mobile interface for easier navigation.
+
+6. **Reporting & Analytics**  
+   - Provide dashboards for admin to track bookings, revenue, and user activity.
+
+7. **Multi-language Support**  
+   - Add localization to support multiple languages for users worldwide.
+
